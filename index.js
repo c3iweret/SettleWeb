@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 
 var app = express();
 
-app.set('view engine', 'pug');
+app.set('view engine', 'ejs');
 app.use(express.static(__dirname));
 
 
@@ -22,20 +22,6 @@ var conversation = new ConversationV1({
   password: 'z8p0KEHpeTR5',
   version_date: ConversationV1.VERSION_DATE_2017_05_26
 });
-
-conversation.message(
-  {
-    input: { text: "What's the weather?" },
-    workspace_id: 'a28add6d-4f47-4164-bfab-098f01d53f24'
-  },
-  function(err, response) {
-    if (err) {
-      console.error(err);
-    } else {
-      console.log(JSON.stringify(response, null, 2));
-    }
-  }
-);
 
 // Main page.
 app.get('/', function(req, res) {
