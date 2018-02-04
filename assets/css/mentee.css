@@ -20,3 +20,7 @@ body { font-family: sans-serif;
     height: 400px;
   }
 }
+
+.apply-padding{
+    padding : 10px;
+}
