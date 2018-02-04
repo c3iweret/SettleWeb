@@ -34,7 +34,6 @@ app.post('/chatUser', function(req,res){
     if(req.query.userType == 'mentee'){
       conversation.message(
   {
-    input: { text: 'hey' },
     workspace_id: 'a28add6d-4f47-4164-bfab-098f01d53f24'
   },
   function(err, response) {
@@ -51,7 +50,6 @@ app.post('/chatUser', function(req,res){
 
       conversation.message(
   {
-    input: { text: 'hey'},
     workspace_id: '9063318d-fed8-4194-81ea-36db8c800bb9'
   },
   function(err, response) {

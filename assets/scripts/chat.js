@@ -20,23 +20,14 @@ $(document).ready(function() {
       var msgFormData = $('#messageForm').serialize();
 
       $message.val('');
-      /*var sockets = {};
-      io.sockets.on('connection', function (socket){
-        sockets[socket.id] = socket;
-      })
-      var currUser = sockets[socket.id].emit();
-      $.post('/chatMsg?user='+currUser, msgFormData);*/
-
 
 
       socket.on('new message', function(data){
         $chat.append('<div class="card"><strong>'+data.user+'</strong>' +data.msg+ '</div>');
         $.post('/chatMsg?user='+data.user, msgFormData, function(chatBotMsg){
-          socket.on('new message', function(data){
             $chat.append('<div class="card"><strong>'+'Bot'+'</strong>' +chatBotMsg.output.text+ '</div>');
         });
       });
-    })
     });
 
     $userForm.submit(function(e){
@@ -51,9 +42,7 @@ $(document).ready(function() {
         if(data){
 
           $.post('/chatUser?userType='+getUserType,userFormData, function(chatBotMsg){
-            socket.on('new message', function(data){
               $chat.append('<div class="card"><strong>'+'Bot'+'</strong>' +chatBotMsg.output.text+ '</div>');
-          });
         });
           $userFormArea.hide();
           $messageArea.show();
