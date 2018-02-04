@@ -17,9 +17,11 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
     extended: true
 }));
 
-var chat = require('./controllers/chatController');
+var chatController = require('./controllers/chatController');
 var index = require('./controllers/indexController');
-app.use('/chat', chat);
+
+
+app.use('/',chatController);
 app.use('/', index);
 
 io.sockets.on('connection', function(socket){
