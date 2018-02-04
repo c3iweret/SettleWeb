@@ -74,19 +74,9 @@ $(document).ready(function() {
       });
     });
 
-    /*socket.on('get users', function(data){
-      $('#welcome-container').append(window.globalusername);
-      var html = '';
-      for(let i = 0; i < data.length; i++){
-        html += '<li class="list-goup-item">' +data[i]+ '</li>';
-      }
-
-      $users.html(html);
-
-    });*/
 
     $('#see-matches').click(function() {
-        window.location.replace('/mentee');
+        window.location.replace('/mentor');
     });
 
     $('#pick-matches').click(function() {
