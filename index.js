@@ -17,21 +17,10 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
     extended: true
 }));
 
-var ConversationV1 = require('watson-developer-cloud/conversation/v1');
-
-var conversation = new ConversationV1({
-  username: '3c468a6d-2d63-4fbf-92df-722453621327',
-  password: 'z8p0KEHpeTR5',
-  version_date: ConversationV1.VERSION_DATE_2017_05_26
-});
-
-// Main page.
-app.get('/', function(req, res) {
-
-	res.render('index', {
-    title: 'Settle'
-        });
-})
+var chat = require('./controllers/chatController');
+var index = require('./controllers/indexController');
+app.use('/chat', chat);
+app.use('/', index);
 
 io.sockets.on('connection', function(socket){
   connections.push(socket);
