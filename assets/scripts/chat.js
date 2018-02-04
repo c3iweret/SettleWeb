@@ -11,24 +11,8 @@ $(document).ready(function() {
     var $userForm = $('#userForm');
     var $users = $('#users');
     var $username = $('#username');
+    var $globalusername;
 
-
-    $messageForm.submit(function(e){
-      e.preventDefault();
-      socket.emit('send message', $message.val());
-
-      var msgFormData = $('#messageForm').serialize();
-
-      $message.val('');
-
-
-      socket.on('new message', function(data){
-        $chat.append('<div class="card"><strong>'+data.user+'</strong>' +data.msg+ '</div>');
-        $.post('/chatMsg?user='+data.user, msgFormData, function(chatBotMsg){
-            $chat.append('<div class="card"><strong>'+'Bot'+'</strong>' +chatBotMsg.output.text+ '</div>');
-        });
-      });
-    });
 
     $userForm.submit(function(e){
       var url = window.location.search;
@@ -36,6 +20,8 @@ $(document).ready(function() {
 
       e.preventDefault();
       var username = $username.val();
+      window.globalusername = $username.val();
+      console.log('username entered is ' + username);
       var userFormData = $('#userForm').serialize();
 
       socket.emit('new user', username, function(data){
@@ -49,6 +35,28 @@ $(document).ready(function() {
         }
       });
       $username.val('');
+    });
+
+
+    $messageForm.submit(function(e){
+      e.preventDefault();
+      socket.emit('send message', $message.val());
+
+      var msgFormData = $('#messageForm').serialize();
+
+      $message.val('');
+
+
+      socket.on('new message', function(data){
+        $chat.append('<div class="card"><strong>'+data.user+'</strong>' +data.msg+ '</div>');
+
+      });
+
+      console.log("username is " + globalusername);
+
+      $.post('/chatMsg?user='+window.globalusername, msgFormData, function(chatBotMsg){
+          $chat.append('<div class="card"><strong>'+'Bot'+'</strong>' +chatBotMsg.output.text+ '</div>');
+      });
     });
 
     socket.on('get users', function(data){
