@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
+var Message = require('./models/message');
 var users = [];
 var connections = [];
 
