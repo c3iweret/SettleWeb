@@ -1,8 +1,10 @@
 /* external css: flickity.css */
 
-* { box-sizing: border-box; }
+/** { box-sizing: border-box; }*/
 
-body { font-family: sans-serif; }
+body { font-family: sans-serif;
+
+}
 
 .carousel {
   background: #EEE;
