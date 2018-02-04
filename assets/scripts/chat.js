@@ -21,6 +21,7 @@ $(document).ready(function() {
       e.preventDefault();
       var username = $username.val();
       window.globalusername = $username.val();
+      $('#welcome-container').append(window.globalusername);
       console.log('username entered is ' + username);
       var userFormData = $('#userForm').serialize();
 
@@ -71,7 +72,8 @@ $(document).ready(function() {
       });
     });
 
-    socket.on('get users', function(data){
+    /*socket.on('get users', function(data){
+      $('#welcome-container').append(window.globalusername);
       var html = '';
       for(let i = 0; i < data.length; i++){
         html += '<li class="list-goup-item">' +data[i]+ '</li>';
@@ -79,7 +81,7 @@ $(document).ready(function() {
 
       $users.html(html);
 
-    });
+    });*/
 
     $('#see-matches').click(function() {
         window.location.replace('/mentee');

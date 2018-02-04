@@ -22,3 +22,7 @@ body{
 .apply-margin{
     margin-top : 200px;
 }
+
+.col-md-4{
+  margin: auto;
+}
