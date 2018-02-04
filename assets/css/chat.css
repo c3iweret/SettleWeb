@@ -4,9 +4,15 @@ body{
 }
 .card{
   margin-top: 15px;
+  background-color: #7fc18eb0 !important;
 }
 #messageArea{
   display: none;
+}
+
+#welcome-container{
+  font-weight: 350 !important;
+  font-size: 20px !important;
 }
 
 #see-matches{

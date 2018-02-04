@@ -21,7 +21,7 @@ $(document).ready(function() {
       e.preventDefault();
       var username = $username.val();
       window.globalusername = $username.val();
-      $('#welcome-container').append(window.globalusername);
+      $('#welcome-container').append(window.globalusername + '!');
       console.log('username entered is ' + username);
       var userFormData = $('#userForm').serialize();
 
