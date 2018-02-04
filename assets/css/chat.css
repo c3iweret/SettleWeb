@@ -7,3 +7,13 @@ body{
 #messageArea{
   display: none;
 }
+
+#see-matches{
+  margin-top: 15px;
+  display:none;
+}
+
+#pick-matches{
+  margin-top: 15px;
+  display:none;
+}

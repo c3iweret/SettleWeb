@@ -46,16 +46,25 @@ $(document).ready(function() {
 
       $message.val('');
 
-
-      socket.on('new message', function(data){
+      var display_message = function(data){
         $chat.append('<div class="card"><strong>'+data.user+'</strong>' +data.msg+ '</div>');
+      };
 
-      });
+
+      socket.on('new message', display_message);
 
       console.log("username is " + globalusername);
 
       $.post('/chatMsg?user='+window.globalusername, msgFormData, function(chatBotMsg){
           $chat.append('<div class="card"><strong>'+'Bot'+'</strong>' +chatBotMsg.output.text+ '</div>');
+          if(chatBotMsg.output.text[0] === "Nice! Welcome to Canada. Please click the button so you can choose your potential mentor!"){
+              $('#pick-matches').show();
+              $messageForm.hide();
+            }
+          if(chatBotMsg.output.text[0] === "Thanks. Please wait while we match you with your mentee!"){
+              $('#see-matches').show();
+              $messageForm.hide();
+            }
       });
     });
 
@@ -67,6 +76,14 @@ $(document).ready(function() {
 
       $users.html(html);
 
+    });
+
+    $('#see-matches').click(function() {
+        window.location.replace('/mentee');
+    });
+
+    $('#pick-matches').click(function() {
+        window.location.replace('/mentee');
     });
 
   });
