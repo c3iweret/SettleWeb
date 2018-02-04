@@ -6,6 +6,7 @@ var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 var Message = require('./models/message');
+var User = require('./models/user');
 var users = [];
 var connections = [];
 
