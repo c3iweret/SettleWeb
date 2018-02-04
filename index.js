@@ -26,6 +26,10 @@ var index = require('./controllers/indexController');
 app.use('/',chatController);
 app.use('/', index);
 
+app.get('/mentee', function(req, res) {
+	res.render('mentee');
+});
+
 io.sockets.on('connection', function(socket){
   connections.push(socket);
   console.log('Connected: %s sockets connected', connections.length);
@@ -58,15 +62,7 @@ io.sockets.on('connection', function(socket){
 
 
 });
-//Routes
 
-/*app.get('/applicants', ta.findAll);
-
-app.post('/applicants', ta.addOne);
-
-app.delete('/applicants', ta.delOne);
-
-app.get('/courses', ta.findWithCourses);*/
 
 
 // Start the server
