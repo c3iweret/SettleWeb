@@ -46,10 +46,13 @@ $(document).ready(function() {
 
       $message.val('');
 
-      var display_message = function(data){
-        $chat.append('<div class="card"><strong>'+data.user+'</strong>' +data.msg+ '</div>');
-      };
+      var counter = 0;
 
+      var display_message = function(data){
+        $chat.append('<div class="card '+ data.msg + " " + counter +'"><strong>'+data.user+'</strong>' +data.msg+ '</div>');
+        counter++;
+        $('.1').hide();
+      };
 
       socket.on('new message', display_message);
 
