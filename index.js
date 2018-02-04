@@ -47,6 +47,7 @@ io.sockets.on('connection', function(socket){
   socket.on('new user', function(data, callback){
     callback(true);
     socket.username = data;
+    console.log("user is " + socket.username);
     users.push(socket.username);
     updateUsernames();
   });
