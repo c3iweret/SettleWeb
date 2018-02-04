@@ -30,6 +30,10 @@ app.get('/mentee', function(req, res) {
 	res.render('mentee');
 });
 
+app.get('/mentor', function(req, res) {
+	res.render('mentor');
+});
+
 io.sockets.on('connection', function(socket){
   connections.push(socket);
   console.log('Connected: %s sockets connected', connections.length);
