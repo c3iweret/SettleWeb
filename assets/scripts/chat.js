@@ -16,7 +16,11 @@ $(document).ready(function() {
     $messageForm.submit(function(e){
       e.preventDefault();
       socket.emit('send message', $message.val());
-      $message.val('');
+
+      $.post('/chat', $message.val(), function(data){
+        $message.val('');
+      })
+
     });
 
     socket.on('new message', function(data){
