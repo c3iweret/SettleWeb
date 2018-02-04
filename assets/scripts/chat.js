@@ -52,7 +52,9 @@ $(document).ready(function() {
       var display_message = function(data){
         $chat.append('<div class="card '+ data.msg + " " + counter +'"><strong>'+data.user+'</strong>' +data.msg+ '</div>');
         counter++;
-        $('.1').hide();
+        var shouldhide = $(':not.0, .card');
+        shouldhide.hide();
+
       };
 
       socket.on('new message', display_message);

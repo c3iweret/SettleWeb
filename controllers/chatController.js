@@ -10,13 +10,15 @@ var conversation = new ConversationV1({
   version_date: ConversationV1.VERSION_DATE_2017_05_26
 });
 
+var nameuser;
 // Main page.
 app.get('/chat', function(req, res) {
-	res.render('chat');
+	res.render('chat', {user: nameuser});
 });
 
 app.post('/chatUser', function(req,res){
   console.log('req body for username' + req.body.username);
+  nameuser = req.body.username;
   if (req.query.userType != undefined) {
     var user = new User({
       username: req.body.username,
