@@ -34,6 +34,14 @@ app.get('/mentor', function(req, res) {
 	res.render('mentor');
 });
 
+app.get('/confirmation', function(req, res) {
+	res.render('confirmation');
+});
+
+app.get('/fullChat', function(req, res) {
+	res.render('fullChat');
+});
+
 io.sockets.on('connection', function(socket){
   connections.push(socket);
   console.log('Connected: %s sockets connected', connections.length);
