@@ -2,30 +2,33 @@
 
 <html>
 	<head>
-    <title>Borderless</title>
+    <title>Index</title>
     <meta charset="UTF-8">
-	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
-	<script type="text/javascript" src="scripts/script.js" defer></script>
-	<link href="css/style.css" type="text/css" rel="stylesheet"/>
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-	</head>
-    <header>
-     <nav class="navbar navbar-inverse">
-        <div class="container-fluid" id="nav">
-            <div class="collapse navbar-collapse" id="main-navbar">
-                <ul class="nav navbar-nav">
-                   <li class="nav"><a href="/dashboard">Home</a></li>
-                    <li class="nav"><a href="/profile">Profile</a></li>
-                    <li class="nav"><a href="/request">Post a request</a></li>
-                    <li class="nav"><a href="/logout">Logout</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    </header>
+  	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+  	<script src="/socket.io/socket.io.js"></script>
+    <script src="/assets/scripts/index.js"></script>
+  	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		  <link rel="stylesheet" type="text/css" href="/assets/css/landing_page.css">
+  </head>
+
 	<body>
+<div class="gradient">
+		<div class = "container-fluid wrapper">
+			<div class="col-sm-12 center">
+				<div class="col-sm-12 text-wrapper">
+						<h1 style="font-size:100px;" > Settle </h1>
+						<hr style="width: 20%; color: #78DE91; height: 4px; background-color: #78DE91;" />
+						<div>
+							<h5>  NEW TO CANADA? <br> DON'T FRET. GET SET. </h5>
+							<p>Select one to begin.</p>
+						</div>
+							<button style="background-color:#72AC43; padding:5px; width:200px;" type="button" class = "btn btn-lg btn-secondary box-shadow--8dp" id='mentor-button'>Mentor</button>
+							<button style="background-color:#72AC43; padding:5px; width:200px;" type="button" class = "btn btn-lg btn-secondary box-shadow--8dp" id='mentee-button'>Mentee</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 	</body>
-
 </html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+    <title>IO Chat</title>
+    <meta charset="UTF-8">
+  	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+  	<script src="/socket.io/socket.io.js"></script>
+		<script src="/assets/scripts/chat.js"></script>
+		<link type="text/css" rel="stylesheet" href="/assets/css/chat.css" />
+  	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	</head>
+  <header>
+  </header>
+	<body>
+    <div class="container">
+      <div id="userFormArea" class="row">
+        <div class="col-md-12">
+          <form id="userForm">
+            <div class="form-group">
+              <label>Enter Username</label>
+              <input class="form-control" id="username">
+              <br />
+              <input type="submit" class="btn btn-primary" value="Login"/>
+            </div>
+          </form>
+        </div>
+      </div>
+        <div id="messageArea" class="row">
+          <div class="col-md-4">
+            <div class="card">
+                <h3>Online Users</h3>
+                <ul class="list-group" id="users"></ul>
+            </div>
+            <div class="chat" id="chat"></div>
+            <form id="messageForm">
+              <div class="form-group">
+                <label>Enter Message</label>
+                <textarea class="form-control" id="message"></textarea>
+                <br />
+                <input type="submit" class="btn btn-primary" value="Send Message"/>
+              </div>
+            </form>
+          </div>
+      </div>
+      </div>
+    </div>
+	</body>
+</html>
