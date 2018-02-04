@@ -1,5 +1,6 @@
 body{
   margin-top: 30px;
+  background: linear-gradient(#E8F6EC, #F9FFE9);
 }
 .card{
   margin-top: 15px;
@@ -16,4 +17,8 @@ body{
 #pick-matches{
   margin-top: 15px;
   display:none;
+}
+
+.apply-margin{
+    margin-top : 200px;
 }
